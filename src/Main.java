@@ -7,17 +7,13 @@ public class Main {
                 "Thursday", "Friday", "Saturday", "Sunday"}));
     }
     public static boolean isWeekend(String dayName) {
-        if (dayName.equals("Sunday") || dayName.equals("Saturday")) {
-            return true;
-        } else {
-            return false;
-        }
+        return dayName.equals("Sunday") || dayName.equals("Saturday");
     }
     public static int weekendCount(String[] days) {
         int weekend = 0;
         String a = "";
-        for (int i = 0; i < days.length; i++) {
-            if (isWeekend(days[i])) {
+        for (String day : days) {
+            if (isWeekend(day)) {
                 weekend++;
             }
         }
@@ -26,12 +22,12 @@ public class Main {
 
     public static int weekdayCount(String[] days) {
         int weekend = 0;
-        for (int i = 0; i < days.length; i++) {
-            if (isWeekend(days[i])) {
+        for (String day : days) {
+            if (isWeekend(day)) {
                 weekend++;
             }
         }
-        int weekday = days.length - weekend;
-        return weekday;
+       return days.length - weekend;
+
     }
 }
